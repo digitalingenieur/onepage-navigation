@@ -3,6 +3,7 @@ $("[data-scroll]").click(function(event) {
 	$("[data-scroll]").parent().removeClass("active"); 
 	$(window).scrollTo($("#" + $(this).data("scroll")).position().top, 800); 
 	$(this).parent().addClass("active"); 
+	document.location.hash = $(this).data("scroll");
 });
 
 $("div.mod_article").mouseover(function() { 

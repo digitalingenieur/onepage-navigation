@@ -4,7 +4,7 @@
 
   <ul>
     <?php foreach ($this->navigation as $nav): ?>
-      <li<?php if($nav->css): ?> class="<?= $nav->css;?>"<?php endif; ?>><a href="#" data-scroll="<?= $nav->alias; ?>" title="<?= $nav->title ?>"><?= $nav->title ?></a></li>
+      <li<?php if($nav->css): ?> class="<?= $nav->css;?>"<?php endif; ?>><a href="#<?= $nav->alias; ?>" data-scroll="<?= $nav->alias; ?>" title="<?= $nav->title ?>"><?= $nav->title ?></a></li>
     <?php endforeach; ?>
   </ul>
 
