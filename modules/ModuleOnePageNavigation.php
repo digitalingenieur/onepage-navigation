@@ -37,13 +37,20 @@ class ModuleOnePageNavigation extends \Module
 					$objArticle->title = $objArticle->navigation_title;
 				}
 
+				if (version_compare(VERSION, '4.1', '>='))
+				{
+					$objArticle->alias = 'article-'.$objArticle->id;
+				}
+
 				$arrNavigation[] = (object) $objArticle->row();
 			}
 		}
 
-		$arrNavigation[0]->css = 'first active';
-		$arrNavigation[count($arrNavigation) - 1]->css = 'last';
-
+		if(!empty($arrNavigation)){
+			$arrNavigation[0]->css = 'first active';
+			$arrNavigation[count($arrNavigation) - 1]->css = 'last';	
+		}
+		
 		$this->Template->navigation = $arrNavigation;
 	}
 }
